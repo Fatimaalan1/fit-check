@@ -43,13 +43,10 @@ You can also document commands to lint the code or run tests. These steps help t
 ## Authors and acknowledgment
 
 Michele Pham - 30117189
-<<<<<<< HEAD
-Fatimaalzhra Ahmed - 30119664
-=======
 Sayma Haque - 30093666
 Jana Afifi - 30119866
 Akansha Malik - 30056048
->>>>>>> 6aafb79d0b1c9e47fd51a071be081fb1580fb7f3
+Fatimaalzhra Ahmed - 30119664
 
 ## License
 
