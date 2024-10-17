@@ -2,7 +2,7 @@ const admin = require('firebase-admin');
 const express = require('express');
 const app = express();
 
-// Firebase service account key
+// Firebase service account key, will get later
 const serviceAccount = require('./path/to/serviceAccountKey.json');
 
 admin.initializeApp({

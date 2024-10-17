@@ -10,7 +10,7 @@ services:
     ports:
       - '3000:3000'
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/path/to/serviceAccountKey.json
+      - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/path/to/serviceAccountKey.json # need to get after getting firebase account
     depends_on:
       - firebase_emulator
 
