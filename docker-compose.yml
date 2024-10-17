@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - '3000:3000'
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/path/to/serviceAccountKey.json
+    depends_on:
+      - firebase_emulator
+
+  firebase_emulator:
+    image: codewithkyle/firebase-tools
+    command: >
+      bash -c "firebase emulators:start --only firestore,auth"
+    ports:
+      - '4000:4000'
+      - '8080:8080'
+    volumes:
+      - ./firebase:/firebase
