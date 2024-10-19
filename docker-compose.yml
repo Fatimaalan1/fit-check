@@ -10,7 +10,7 @@ services:
     ports:
       - '3000:3000'
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/path/to/serviceAccountKey.json # need to get after getting firebase account
+      - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/path/to/serviceAccountKey.json # need to get after getting firebase account, and figure out password stuff
       - FIREBASE_API_KEY=${FIREBASE_API_KEY}
       - FIREBASE_AUTH_DOMAIN=${FIREBASE_AUTH_DOMAIN}
       - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
