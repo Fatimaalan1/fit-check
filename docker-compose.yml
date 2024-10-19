@@ -11,15 +11,12 @@ services:
       - '3000:3000'
     environment:
       - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/path/to/serviceAccountKey.json # need to get after getting firebase account
-    depends_on:
-      - firebase_emulator
+      - FIREBASE_API_KEY=${FIREBASE_API_KEY}
+      - FIREBASE_AUTH_DOMAIN=${FIREBASE_AUTH_DOMAIN}
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+      - FIREBASE_STORAGE_BUCKET=${FIREBASE_STORAGE_BUCKET}
+      - FIREBASE_MESSAGING_SENDER_ID=${FIREBASE_MESSAGING_SENDER_ID}
+      - FIREBASE_APP_ID=${FIREBASE_APP_ID}
 
-  firebase_emulator:
-    image: codewithkyle/firebase-tools
-    command: >
-      bash -c "firebase emulators:start --only firestore,auth"
-    ports:
-      - '4000:4000'
-      - '8080:8080'
-    volumes:
-      - ./firebase:/firebase
+
+

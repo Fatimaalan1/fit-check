@@ -1,10 +1,3 @@
-# Dockerfile - build our custom image
-FROM python:3.8-slim   
-WORKDIR /app 
-COPY app.py . 
-RUN pip install flask
-CMD ["python", "app.py"]
-
 # Node.js 18 -- need to add other services
 FROM node:18
 WORKDIR /usr/src/app
