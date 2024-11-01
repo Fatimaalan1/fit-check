@@ -69,13 +69,18 @@ VALUES
 
 -- Grab user post based on flag value of 1:
 -- SELECT *
--- FROM UserPost
+-- FROM userpost
 -- WHERE flag = 1;
 
 -- grab user posts based on uid = 3
 -- SELECT *
--- FROM UserPost
+-- FROM userpost
 -- WHERE uid = 3;
+
+-- Flag a specific user post
+-- UPDATE userpost
+-- SET flag = 1
+-- WHERE pid = 1;
 
 INSERT INTO userrating (rid, pid, uid, rating)
 VALUES
@@ -87,6 +92,14 @@ VALUES
     (6, 6, 1, 2.6),
     (7, 7, 1, 3.8);
 
+-- Queries
+
+-- get average of ratign for one post
+-- SELECT pid, AVG(rating) AS avg_rating_of_post
+-- FROM userrating
+-- WHERE pid = 1
+-- GROUP BY pid;
+
 INSERT INTO brandpost (pid, uid, picture, flag) 
 VALUES 
     (1, 4, 'https://image.hm.com/assets/hm/1e/e6/1ee60900d682e151222d978cc215c986e2df5c89.jpg?imwidth=1260', FALSE),
@@ -97,17 +110,22 @@ VALUES
 -- Get photo from a Brand Post
 -- SELECT Picture
 -- FROM BrandPost
--- WHERE PostID = 1;
+-- WHERE pid = 1;
 
 -- Get all flagged Brand Posts
--- SELECT PostID, Picture, flag
+-- SELECT pid, Picture, flag
 -- FROM BrandPost
 -- WHERE flag = 0;
 
 -- Delete a specific Brand Post
 -- DELETE 
 -- FROM BrandPost
--- WHERE PostID = 1;
+-- WHERE pid = 1;
+
+-- Flag a specific Brand Post
+-- UPDATE BrandPost
+-- SET flag = 1
+-- WHERE pid = 1;
 
 INSERT INTO brandpostdetails (bpdid, pid, itemtype, URL, clicks) 
 VALUES 
@@ -121,14 +139,14 @@ VALUES
 -- Get Item types, URLs, and # of clicks for a specific Brand Post (Analytics query)
 -- SELECT bd.ItemType, bd.URL, bd.Clicks
 -- FROM BrandPostDetails bd, BrandPost bp
--- WHERE bd.PostID = bp.PostID AND bd.PostID = 1;
+-- WHERE bd.pid = bp.pid AND bd.pid = 1;
 
 -- Delete Brand Post Details for a specific Brand Post (Run before deleting brand post itself)
 -- DELETE 
 -- FROM BrandPostDetails
--- WHERE PostID = 1;
+-- WHERE pid = 1;
 
 -- Update # of clicks for a specific Brand Post and ItemType
 -- UPDATE BrandPostDetails
 -- SET Clicks = 100
--- WHERE PostID = 1 AND ItemType = ‘Sweater’;
+-- WHERE pid = 1 AND ItemType = ‘Sweater’;
