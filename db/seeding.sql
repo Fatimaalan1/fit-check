@@ -38,6 +38,22 @@ VALUES
     (6, 3, 'Outerwear', 'Denim Jacket', 'denim_jacket.png', 'Vintage denim jacket'),
     (7, 3, 'Top', 'Green Hoodie', 'green_hoodie.png', 'Comfy and warm hoodie');
 
+-- For a certain type of clothing for drop down
+-- SELECT DISTINCT ItemType
+-- FROM Wardrobe;
+
+-- group a user’s wardrobe by type each type has 
+-- SELECT Wid, ItemType, name, picture, other_details
+-- FROM Wardrobe
+-- WHERE Uid = 1
+-- ORDER BY ItemType;
+
+-- Count amount of items in each item type
+-- SELECT ItemType, COUNT(*) AS ItemCount
+-- FROM Wardrobe
+-- WHERE Uid = 1
+-- GROUP BY ItemType;
+
 
 INSERT INTO userpost (pid, uid, picture, title, description, avgrating, flag)
 VALUES
