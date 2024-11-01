@@ -19,10 +19,6 @@ Not sure what to wear to that date? Just ask the users of FitCheck! Post your op
 5. To view the MySQL contents within the docker container, open a new PowerShell window and enter the command: ``` docker exec -it mysql_db mysql -u root -p ``` then enter the root password found in the .env file. You should now by greeted with mysql>. Enter: ``` SHOW databases; ``` to see the databases available. Next, enter: ``` USE fitcheckdatabase; ``` then use: ``` SHOW tables; ``` to see the tables in the db. To see the contents in each table use: ``` SELECT * FROM users; ``` or replace ``` users ``` with any of the table names. You can exit at any time using Ctrl-Z.
 6. You can stop and remove the container in Docker Desktop to stop running the docker and close the application.
 
-## Usage
-
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
 ## Authors and acknowledgment
 
 Michele Pham - 30117189  <br />
