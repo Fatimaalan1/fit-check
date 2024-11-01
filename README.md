@@ -25,10 +25,10 @@ Use examples liberally, and show the expected output if you can. It's helpful to
 
 ## Authors and acknowledgment
 
-Michele Pham - 30117189
-Sayma Haque - 30093666
-Jana Afifi - 30119866
-Akansha Malik - 30056048
+Michele Pham - 30117189  <br />
+Sayma Haque - 30093666  <br />
+Jana Afifi - 30119866  <br />
+Akansha Malik - 30056048  <br />
 Fatimaalzhra Ahmed - 30119664
 
 ## Project status
