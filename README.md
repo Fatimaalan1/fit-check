@@ -8,37 +8,20 @@ The project name is called FitCheck.
 
 Not sure what to wear to that date? Just ask the users of FitCheck! Post your options and other users can rate which one they think you should wear. Can't find what to wear? Business partners will also post their products for users to browse.
 
-## Badges
-
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
 ## Installation
 
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Docker Setup with Web and Database
+
+0. Ensure you have Docker Desktop installed and ready to run. Additionally, ensure you have the .env file from developers
+1. Download files, for the sake of this example, let's imagine we extracted the zip into C:\Users\john\Downloads.
+2. In this folder, paste/move the .env file
+3. In C:\Users\john\Downloads\seng513-fall24-group-27, open PowerShell and type ``` docker-compose up --build ``` and wait for the logs to reach: ``` [Note] [Entrypoint]: MySQL init process done. Ready for start up. ``` This indicates that the web server AND database has been successfully set up.
+4. Open Docker Desktop and open the link for the web server: 8080:80⁠
+5. To view the MySQL contents within the docker container, open a new PowerShell window and enter the command: ``` docker exec -it mysql_db mysql -u root -p ``` then enter the root password found in the .env file. You should now by greeted with mysql>. Enter: ``` SHOW databases; ``` to see the databases available. Next, enter: ``` USE fitcheckdatabase; ``` then use: ``` SHOW tables; ``` to see the tables in the db. To see the contents in each table use: ``` SELECT * FROM users; ``` or replace ``` users ``` with any of the table names. You can exit at any time using Ctrl-Z.
 
 ## Usage
 
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
 ## Authors and acknowledgment
 
@@ -48,10 +31,6 @@ Jana Afifi - 30119866
 Akansha Malik - 30056048
 Fatimaalzhra Ahmed - 30119664
 
-## License
-
-For open source projects, say how it is licensed.
-
 ## Project status
 
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+In progress.
