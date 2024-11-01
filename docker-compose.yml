@@ -1,22 +1,31 @@
-version: '3.8'
-
 services:
-  app:
+  db:
     build:
       context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/usr/src/app
-    ports:
-      - '3000:3000'
+      dockerfile: Dockerfile-db
+    container_name: mysql_db
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/path/to/serviceAccountKey.json # need to get after getting firebase account, and figure out password stuff
-      - FIREBASE_API_KEY=${FIREBASE_API_KEY}
-      - FIREBASE_AUTH_DOMAIN=${FIREBASE_AUTH_DOMAIN}
-      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
-      - FIREBASE_STORAGE_BUCKET=${FIREBASE_STORAGE_BUCKET}
-      - FIREBASE_MESSAGING_SENDER_ID=${FIREBASE_MESSAGING_SENDER_ID}
-      - FIREBASE_APP_ID=${FIREBASE_APP_ID}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
 
-
-
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-web
+    container_name: php_web
+    depends_on:
+      - db
+    volumes:
+      - ./web:/var/www/html
+    ports:
+      - "8080:80"
+  
+volumes:
+  mysql_data:
+    # Define volume for persisting MySQL data
