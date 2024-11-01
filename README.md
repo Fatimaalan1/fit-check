@@ -9,8 +9,7 @@ The project name is called FitCheck.
 Not sure what to wear to that date? Just ask the users of FitCheck! Post your options and other users can rate which one they think you should wear. Can't find what to wear? Business partners will also post their products for users to browse.
 
 ## Installation
-
-## Docker Setup with Web and Database
+### Docker Setup with Web and Database
 
 0. Ensure you have Docker Desktop installed and ready to run. Additionally, ensure you have the .env file from developers
 1. Download files, for the sake of this example, let's imagine we extracted the zip into C:\Users\john\Downloads.
